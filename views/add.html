@@ -1,0 +1,77 @@
+<link rel="stylesheet" type="text/scss" href="styles/styles.css">
+<div class="container" ng-controller='AddController' id="editForm">
+    <div class="d-md-flex justify-content-around">
+        <div class="p-2">
+            <h2>Add New Employee</h2>
+          </div>
+    </div>
+    <form name="addEmployeeForm" ng-submit="addEmployeeAction()" novalidate>
+        <div class="d-md-flex justify-content-around">
+            <div class="p-2">
+                <label>Employee Id</label>
+                <input type="number" ng-model="field.id" name="id" autocomplete="off" class="form-control" ng-required="true"/>
+                <div ng-show="addEmployeeForm.id.$touched && addEmployeeForm.id.$invalid">
+                     <small>Please Enter Id Field</small>   
+                </div>    
+            </div>
+            <div class="p-2">
+                <label>Employee Name</label>
+                <input type="text"   ng-model="field.name" name="name" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="addEmployeeForm.name.$touched && addEmployeeForm.name.$invalid">
+                    <small>Please Enter Name</small>   
+               </div>
+            </div>
+            <div class="p-2">
+                <label>Gender</label>
+                <input type="text" ng-model="field.gender" name="gender" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="addEmployeeForm.gender.$touched && addEmployeeForm.gender.$invalid">
+                    <small>Please Enter Gender</small>   
+               </div>
+            </div>
+            <div class="p-2">
+                <label>Address City</label>
+                <input type="text" ng-model="field.address" name="address" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="addEmployeeForm.address.$touched && addEmployeeForm.address.$invalid">
+                    <small>Please Enter Address</small>   
+               </div>
+            </div>
+        </div>
+        <div class="d-md-flex justify-content-around">
+            <div class="p-2">
+                <label>Company</label>
+                <input type="text" ng-model="field.company" name="company" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="addEmployeeForm.company.$touched && addEmployeeForm.company.$invalid">
+                    <small>Please Enter Company</small>   
+               </div>
+            </div>
+            <div class="p-2">
+                <label>Email</label>
+                <input type="email" ng-model="field.email" name="email" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="addEmployeeForm.email.$touched && addEmployeeForm.email.$invalid">
+                    <small>Please Enter Valid Email</small>   
+               </div>
+            </div>
+            <div class="p-2">
+                <label>Phone</label>
+                <input type="text" ng-model="field.phone" name="phone" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="addEmployeeForm.phone.$touched && addEmployeeForm.phone.$invalid">
+                    <small>Please Enter Valid Phone</small>   
+               </div>
+            </div>
+            <div class="p-2">
+                <label>Age</label>
+                <input type="number" ng-model="field.age" name="age" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="addEmployeeForm.age.$touched && addEmployeeForm.age.$invalid">
+                    <small>Please Enter Valid Age</small>   
+               </div>
+            </div>
+        </div>
+        <div class="d-md-flex justify-content-center">
+            <div class="p-2">
+              <button class="btn btn-success"  type="submit" ng-click="addEmployeeAction(field)" ng-disabled="addEmployeeForm.$invalid">Save</button>
+              <button class="btn btn-primary"  type="button" ng-click="back()">Back</button>
+            </div>
+          </div>
+    </form>
+</div>
+

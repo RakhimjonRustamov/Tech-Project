@@ -1,0 +1,77 @@
+<link rel="stylesheet" type="text/scss" href="styles/styles.css">
+<div class="container" ng-controller='EditController' id="editForm">
+    <div class="d-md-flex justify-content-around">
+        <div class="p-2">
+            <h2>Update Employee</h2>
+          </div>
+    </div>
+    <form name="editEmployeeForm" ng-submit="editEmployeeAction()" ng-repeat = "field in myData" novalidate>
+        <div class="d-md-flex justify-content-around">
+            <div class="p-2">
+                <label>Employee Id</label>
+                <input type="number" ng-model="field.id" name="id" autocomplete="off" class="form-control" ng-required="true"/>
+                <div ng-show="editEmployeeForm.id.$touched && editEmployeeForm.id.$invalid">
+                     <small>Please Enter Id Field</small>   
+                </div>    
+            </div>
+            <div class="p-2">
+                <label>Employee Name</label>
+                <input type="text"   ng-model="field.name" name="name" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="editEmployeeForm.name.$touched && editEmployeeForm.name.$invalid">
+                    <small>Please Enter Name</small>   
+               </div>
+            </div>
+            <div class="p-2">
+                <label>Gender</label>
+                <input type="text" ng-model="field.gender" name="gender" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="editEmployeeForm.gender.$touched && editEmployeeForm.gender.$invalid">
+                    <small>Please Enter Gender</small>   
+               </div>
+            </div>
+            <div class="p-2">
+                <label>Address City</label>
+                <input type="text" ng-model="field.address" name="address" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="editEmployeeForm.address.$touched && editEmployeeForm.address.$invalid">
+                    <small>Please Enter Address</small>   
+               </div>
+            </div>
+        </div>
+        <div class="d-md-flex justify-content-around">
+            <div class="p-2">
+                <label>Company</label>
+                <input type="text" ng-model="field.company" name="company" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="editEmployeeForm.company.$touched && editEmployeeForm.company.$invalid">
+                    <small>Please Enter Company</small>   
+               </div>
+            </div>
+            <div class="p-2">
+                <label>Email</label>
+                <input type="email" ng-model="field.email" name="email" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="editEmployeeForm.email.$touched && editEmployeeForm.email.$invalid">
+                    <small>Please Enter Valid Email</small>   
+               </div>
+            </div>
+            <div class="p-2">
+                <label>Phone</label>
+                <input type="text" ng-model="field.phone" name="phone" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="editEmployeeForm.phone.$touched && editEmployeeForm.phone.$invalid">
+                    <small>Please Enter Valid Phone</small>   
+               </div>
+            </div>
+            <div class="p-2">
+                <label>Age</label>
+                <input type="number" ng-model="field.age" name="age" autocomplete="off" class="form-control" ng-required="true">
+                <div ng-show="editEmployeeForm.age.$touched && editEmployeeForm.age.$invalid">
+                    <small>Please Enter Valid Age</small>   
+               </div>
+            </div>
+        </div>
+        <div class="d-md-flex justify-content-center">
+            <div class="p-2">
+              <button class="btn btn-success"  type="submit" ng-click="editEmployeeAction(field)" ng-disabled="editEmployeeForm.$invalid">Save</button>
+              <button class="btn btn-primary"  type="button" ng-click="back()">Back</button>
+            </div>
+          </div>
+    </form>
+</div>
+
